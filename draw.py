@@ -6,7 +6,7 @@ def add_circle( points, cx, cy, cz, r, step ):
     t = step
     x_p = cx+r*math.cos(0)
     y_p = cy+r*math.sin(0)
-    while t <= 1+step:
+    while t <= 1.0001:
         theta = (t)*2*math.pi
         x = cx+r*math.cos(theta)
         y = cy+r*math.sin(theta)
@@ -22,7 +22,7 @@ def add_hermite_curve( points, x0, y0, x1, y1, rx0, ry0, rx1, ry1, step ):
     x_co = generate_curve_coefs( x0, x1, rx0, rx1, 'hermite' )
     y_co = generate_curve_coefs( y0, y1, ry0, ry1, 'hermite' )
     t = step
-    while t <= 1+step:
+    while t <= 1.0001:
         x = x_co[0]*(t**3)+x_co[1]*(t**2)+x_co[2]*(t)+x_co[3]
         y = y_co[0]*(t**3)+y_co[1]*(t**2)+y_co[2]*(t)+y_co[3]
         z = 0
@@ -37,7 +37,7 @@ def add_bezier_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step ):
     x_p = x0
     y_p = y0
     t = step
-    while t <= 1+step:
+    while t <= 1.0001:
         x = x_co[0]*(t**3)+x_co[1]*(t**2)+x_co[2]*(t)+x_co[3]
         y = y_co[0]*(t**3)+y_co[1]*(t**2)+y_co[2]*(t)+y_co[3]
         z = 0
