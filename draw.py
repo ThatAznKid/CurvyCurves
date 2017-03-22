@@ -16,14 +16,6 @@ def add_circle( points, cx, cy, cz, r, step ):
         y_p = y
         t += step
 
-
-def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
-    if curve_type == 'hermite':
-        add_hermite_curve(points,x0,y0,x1,y1,x2,y2,x3,y3,step)
-    if curve_type == 'bezier':
-        add_bezier_curve(points,x0,y0,x1,y1,x2,y2,x3,y3,step)
-
-
 def add_hermite_curve( points, x0, y0, x1, y1, rx0, ry0, rx1, ry1, step ):
     x_p = x0
     y_p = y0
